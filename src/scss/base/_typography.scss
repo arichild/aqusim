@@ -1,0 +1,90 @@
+p {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 20px;
+  }
+}
+
+ul,
+ol,
+li {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+ul, ol {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: $fontRal;
+  color: $colorDark;
+  text-transform: none;
+  line-height: 1.17;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+h1,
+.h1 {
+  font-size: rem(85);
+  margin-top: 0;
+
+  @media (max-width: 1366px) {
+    font-size: rem(42);
+  }
+}
+
+h2,
+.h2 {
+  font-size: rem(70);
+
+  @media (max-width: 1366px) {
+    font-size: rem(38);
+  }
+}
+
+h3,
+.h3 {
+  font-size: rem(34);
+  font-weight: 500;
+
+  @media (max-width: 1366px) {
+    font-size: rem(28);
+  }
+}
+
+h4,
+.h4 {
+  font-size: rem(24);
+  color: #000;
+}
+
+h5,
+.h5 {
+  font-size: rem(20);
+}
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

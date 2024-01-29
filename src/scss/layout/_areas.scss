@@ -1,0 +1,454 @@
+.vacancy-filters {
+    background-color: $colorRed;
+    color: #FFF;
+    min-height: 100%;
+    flex: 1 0 auto;
+
+    &-close {
+        display: none;
+    }
+    &-wrp {
+        min-height: 100%;
+        display: flex;
+    }
+
+    @media(max-width:1023px) {
+        display: none;
+    }
+    
+    
+    &-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 70px;
+
+        @media(max-width:1366px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &-title {
+        font-size: rem(70);
+        line-height: 1.17;
+        font-weight: 700;
+        font-family: $fontRal;
+        margin-bottom: 10px;
+
+        @media (max-width: 1366px) {
+            font-size: rem(38);
+        }
+    }
+
+    &-reset {
+        position: relative;
+        top: 3px;
+        margin-left: 10px;
+        font-size: rem(30);
+        font-weight: 300;
+        cursor: pointer;
+        color: #FFF;
+        transition: .15s opacity;
+
+        @media(max-width:1366px) {
+            top: 0px;
+            font-size: rem(18);
+        }
+
+        &:hover {
+            opacity: 0.8;
+            color: #FFF;
+        }
+    }
+
+    &-fields {
+        margin-bottom: 65px;
+
+        @media(max-width: 1366px) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &-field {
+        margin-bottom: 50px;
+
+        @media(max-width: 1366px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &-label {
+        margin-bottom: 28px;
+        font-family: $fontRal;
+        font-weight: 700;
+
+        @media(max-width: 1366px) {
+            margin-bottom: 18px;
+            font-size: rem(14);
+        }
+    }
+
+    @media (max-width: 1023px) {
+        background-color: $colorBack;
+        color: $colorDark;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 50px;
+        padding-top: 75px;
+        padding-bottom: 45px;
+
+        &.mobile-opened {
+            display: block;
+        }
+
+        &-close {
+            display: block;
+            position: absolute;
+            right: 40px;
+            top: 25px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            z-index: 9;
+
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 3px;
+                top: 50%;
+                margin-top: -1px;
+                background-color: $colorRed;
+            }
+            &:before {
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+        &-wrp {
+            position: relative;
+        }
+        &-fields {
+            margin-bottom: 45px;
+        }
+        &-reset {
+            color: $colorDark;
+
+            &:hover {
+                color: $colorDark;
+            }
+        }
+        .ui-btn {
+            background-color: $colorRed;
+            border-color: $colorRed;
+            color: #FFF;
+        }
+        &-btns {
+            text-align: center;
+        }
+    }
+    @media (max-width: 599px) {
+        &-close {
+            right: 25px;
+        }
+    }
+}
+
+.vacancy-results {
+    &-topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $colorDark;
+        padding-top: 35px;
+        padding-bottom: 18px;
+
+        @media (max-width: 1366px) {
+            padding-top: 0;
+            padding-bottom: 5px;
+        }
+    }
+    &-count {
+        font-size: rem(30);
+
+        @media(max-width:1366px) {
+            font-size: rem(18);
+        }
+    }
+
+    &-filter {
+        display: none;
+        font-weight: 700;
+        font-size: rem(18);
+        text-transform: uppercase;
+        font-family: $fontRal;
+        cursor: pointer;
+        
+
+        @media(max-width:1023px) {
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.vacancy-list {
+    margin-bottom: 160px;
+    border-top: 2px solid $colorGray;
+
+    @media (max-width: 1366px) {
+        margin-bottom: 50px;
+    }
+    @media (max-width: 1023px) {
+        border-top: 0;
+    }   
+    @media (max-width: 599px) {
+        margin-bottom: 46px;
+    }
+}
+
+.vacancy-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-bottom: 2px solid $colorGray;
+
+    @media(max-width:1366px) {
+        padding: 30px 0;
+    }
+
+    @media(max-width:599px) {
+        display: block;
+        padding: 44px 0;
+    }
+
+    &-top {
+        // flex: 0 0 40%;
+        // max-width: 40%;
+        width: 100%;
+        max-width: 55%;
+        padding-right: 10%;
+
+        @media(max-width: 1366px) {
+            flex: 0 0 45%;
+            max-width: 45%;
+        } 
+
+        @media(max-width: 599px) {
+            max-width: 100%;
+            padding-right: 0;
+            margin-bottom: 14px;
+        }
+    }
+
+    &-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: $fontRal;
+        flex: 0 0 23%;
+        max-width: 23%;
+        width: 100%;
+        padding-right: 40px;
+        padding-top: 10px;
+
+        @media(max-width:599px) {
+            display: block;
+            max-width: 100%;
+            padding-top: 0;
+        }
+    }
+
+    &-bottom {
+        align-self: center;
+    }
+
+    &-title {
+        margin-bottom: 28px;
+        font-size: rem(34);
+        font-weight: 500;
+        line-height: 1.17;
+        font-family: $fontRal;
+
+        @media(max-width:1366px) {
+            margin-bottom: 18px;
+            font-size: rem(22);
+        }
+
+        @media(max-width:599px) {
+            margin-bottom: 16px;
+            font-size: rem(28);
+        }
+    }
+
+    &-txt {
+        color: $colorDark;
+
+        @media(max-width:1366px) {
+            font-size: rem(14);
+        }
+
+        @media(max-width:599px) {
+            font-size: rem(18);
+        }
+    }
+
+    &-city {
+        font-size: rem(24);
+        font-weight: 700;
+        line-height: 1.17;
+        margin-bottom: 20px;
+
+        @media(max-width:1366px) {
+            font-size: rem(14);
+        }
+
+        @media(max-width:599px) {
+            margin-bottom: 16px;
+            font-size: rem(24);
+        }
+    }
+
+    &-price {
+        font-size: rem(24);
+        font-weight: 700;
+        color: $colorRed;
+
+        @media(max-width:1366px) {
+            font-size: rem(14);
+        }
+
+        @media(max-width:599px) {
+            font-size: rem(24);
+            margin-bottom: 44px;
+        }
+    }
+}
+
+
+.vacancy{
+
+    &-info {
+
+        &-result {
+            margin-bottom: 18px;
+            font-size: rem(30);
+            font-weight: 300;
+            font-family: $fontNun;
+
+            @media(max-width:1023px) {
+                margin-bottom: 5px;
+                font-size: rem(18);
+            }
+        }
+
+        
+
+        &-container {
+            margin-bottom: 160px;
+
+            @media(max-width:1366px) {
+                margin-bottom: 50px;
+            } 
+
+            @media(max-width:1023px) {
+                margin-bottom: 45px;
+            } 
+            .vacancy-info-item:first-child {
+                border-top: 2px solid $colorGray;
+
+                @media(max-width:1023px) {
+                    border-top: none;
+                }
+            }
+        }
+        .mobile-filter {
+            position: relative;
+            display: none;
+            margin: 0 -45px;
+            margin-top: 25px;
+
+            @media(max-width:599px){
+                margin: 0 -25px;
+                margin-top: 25px;
+            }
+
+    
+            @media(max-width:1023px){
+                display: block;
+            }
+
+            &-close {
+                display: none;
+                position: absolute;
+                top: 23px;
+                right: 23px;
+            }
+        }
+    }
+
+    &-container {
+        @media(max-width:1023px) {
+            display: block;
+        }
+    }
+
+    
+
+}
+
+
+.open {
+    .vacancy-summery {
+        display: block;
+        position: absolute;
+        left: 0;
+        max-width: 100%;
+        min-width: 100%;
+        margin-left: 0;
+        padding-top: 75px;
+        background-color: $colorBack;
+        text-align: center;
+
+       
+        
+        &-title {
+            color: $colorDark;
+        }
+
+        &-name {
+            max-width: 100%;
+            color: $colorDark;
+            text-align: left;
+        }
+
+        &-btn{
+            max-width: 200px;
+            border: none;
+            height: 57px;
+            line-height: 57px;
+        }
+
+        .jq-selectbox__select-text {
+            text-align: left;
+        }
+
+        .jq-selectbox__dropdown {
+           text-align: left;            
+        }
+    }
+
+    .mobile-filter-close {
+        display: block !important;
+    }
+}

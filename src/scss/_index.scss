@@ -1,0 +1,134 @@
+.layout {
+  display: flex;
+
+  &-aside{
+    flex: 0 0 480px;
+    max-width: 32%;
+    // min-width: 340px;
+    // max-width: 560px;
+
+    &-paddings {
+      padding: 85px 80px;
+    }
+  }
+  &-content {
+    // flex: 0 0 68%;
+    width: 100%;
+    padding-left: 9%;
+    padding-bottom: 100px;
+  }
+  &-negative-left {
+    margin-left: -80px;
+  }
+  &-negative-right {
+    margin-right: -80px;
+  }
+
+
+  @media (max-width: 1680px) {
+    &-content {
+      padding-left: 60px;
+    }
+    &-negative-left {
+      margin-left: -60px;
+    }
+    &-negative-right {
+      margin-right: -60px;
+    }
+    &-aside-paddings {
+      padding: 75px 60px;
+    }
+  }
+
+
+  @media (max-width: 1366px) {
+    &-content {
+      padding-left: 50px;
+    }
+    &-negative-left {
+      margin-left: -50px;
+    }
+    &-negative-right {
+      margin-right: -50px;
+    }
+    &-aside-paddings {
+      padding: 65px 50px;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    flex-wrap: wrap;
+
+    &-aside {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    &-content {
+      padding-bottom: 80px;
+      padding-left: 0;
+    }
+    &-negative-left {
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+    &-negative-right {
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+    &-aside-paddings {
+      padding: 55px 40px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &-negative-left {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+    &-negative-right {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+    &-aside-paddings {
+      padding: 35px 25px;
+    }
+  }
+}
+
+.terms-inner {
+  max-width: 1040px;
+  margin: 0 auto 160px;
+
+  @media (max-width: 1366px) {
+    margin-bottom: 80px;
+  }
+}
+
+.wrapper-error {
+  position: relative;
+
+  &-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+  }
+  .header-line {
+    background-color: transparent;
+  }
+
+  @media (max-width: 1023px) {
+    // background: linear-gradient(0deg, rgba(242,242,242,0) 43%, rgba(242,242,242,1) 55%, rgba(242,242,242,1) 100%);
+    background: linear-gradient(0deg, rgba(242,242,242,0) 35%, rgba(242,242,242,1) 48%, rgba(242,242,242,1) 100%);
+
+    &-bg {
+      top: 45%;
+      bottom: 0;
+      min-height: 55%;
+    }
+  }
+}

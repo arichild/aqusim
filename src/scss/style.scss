@@ -1,0 +1,135 @@
+/* base */
+@import "./base/mixin.scss";
+@import "./base/vars.scss";
+@import "./base/typography.scss";
+@import "./base/grid.scss";
+@import "./base/ui.scss";
+@import "./base/popups.scss";
+
+/* layout */
+@import "./layout/inc-header.scss";
+@import "./layout/inc-footer.scss";
+
+
+/* pages */
+@import "index";
+@import "./layout/main.scss";
+@import "./layout/vacancy.scss";
+@import "./layout/areas.scss";
+@import "./layout/about.scss";
+
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  font-family: $fontNun;
+  font-weight: 300;
+  font-size: rem(22);
+  line-height: 1.42;
+  color: #000;
+  background-color: #fff;
+
+  @media (max-width: 1366px) {
+    font-size: rem(20);
+  }
+
+  @media (max-width: 1023px) {
+    font-size: rem(14);
+  }
+
+  @media (max-width: 599px) {
+    font-size: rem(18);
+    line-height: 1.25;
+  }
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+#middle {
+  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+}
+
+#footer {
+  flex: 0 0 auto;
+  -webkit-box-flex: 0;
+}
+
+// .container {
+//   margin: 0 auto;
+//   width: 100%;
+//   max-width: $widthContainer;
+//   padding-left: $paddingContainer;
+//   padding-right: $paddingContainer;
+// }
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  @media (max-width: 1680px) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  @media (max-width: 1366px) {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  @media (max-width: 1024px) {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  @media (max-width: 599px) {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.more-1024 {
+  display: block;
+  
+  @media(max-width:1024px) {
+    display: none;
+  }
+}
+
+.less-1024 {
+  display: none;
+
+  @media(max-width:1024px) {
+    display: block;
+  }
+}

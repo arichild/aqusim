@@ -1,0 +1,75 @@
+<div class="mfp-popup popup-talk zoom-anim-dialog">
+  <div class="mfp-popup-inner">
+    <div class="mfp-popup-title">Talk to a Consultant</div>
+
+    <form class="form-popup-talk">
+      <div class="ui-fields">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="text" name="talk_name" id="talk_name" class="ui-input" placeholder="First Name*" required>
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="text" name="talk_secondName" id="talk_secondName" class="ui-input" placeholder="Last Name*" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="email" name="talk_email" id="talk_email" class="ui-input" placeholder="Email*" required>
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="tel" class="ui-tel ui-input" placeholder="Phone*" name="talk_telephone" id="talk_telephone" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui-field">
+          <input type="text" name="company" id="company" class="ui-input" placeholder="Company name*" required>
+        </div>
+
+        <div class="ui-field">
+          <textarea id="talk_extbox" name="talk_textbox" placeholder="Your Message*" class="ui-input" rows="4" required></textarea>
+        </div>
+      </div>
+
+      <div class="main-touch-form-btns">
+        <div class="main-touch-form-agree">
+          <div class="ui-checkbox">
+            <input type="checkbox" class="ui-checkbox-input custom-checkbox" id="ptagree" name="ptagree" value="yes">
+            <label for="ptagree" class="ui-checkbox-label">I agree to the <a href="#" class="checkbox-link">Privacy Policy</a> and <a href="#" class="checkbox-link">Terms & Conditions</a></label>
+          </div>
+        </div>
+        <div class="main-touch-form-submit">
+          <button class="ui-btn ui-btn-block">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("form.form-popup-talk").validate({
+      rules: {
+        talk_email: {
+          email: true,
+        },
+        talk_telephone: {
+          required: true,
+          telephone: true,
+        },
+      },
+    });
+
+    $(".mfp-popup .ui-tel").intlTelInput();
+  });
+  </script>
+</div>

@@ -1,0 +1,62 @@
+.about-layout {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-content {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 120px;
+        padding-right: 4.5%;
+    }
+    &-right {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding-left: 4.5%;
+    }
+    &-inner {
+        margin-bottom: 80px;
+    }
+
+    @media (max-width: 1023px) {
+        &-content {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-right: 0;
+            margin-bottom: 80px;
+        }
+        &-right {
+            padding-left: 0;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        &-inner {
+            margin-bottom: 45px;
+        }
+    }
+}
+
+.about-img {
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+
+    img {
+        display: block;
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+        min-height: 100%;
+        min-width: 100%;
+    }
+
+    .ui-pattern {
+        position: absolute;
+        right: 0;
+        top: 80px;
+    }
+
+    @media (max-width: 1023px) {
+        display: none;
+        visibility: hidden;
+    }
+}

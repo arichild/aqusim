@@ -1,0 +1,114 @@
+<div class="mfp-popup popup-job zoom-anim-dialog">
+  <div class="mfp-popup-inner">
+    <div class="mfp-popup-title">Apply for a job</div>
+
+    <form class="popup-job-form">
+      <div class="ui-fields">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="text" name="name" id="name" class="ui-input" placeholder="First Name*" required>
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="text" name="secondName" id="secondName" class="ui-input" placeholder="Last Name*">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="email" name="email" id="email" class="ui-input" placeholder="Email*" required>
+            </div>
+          </div>
+
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input type="tel" placeholder="" class="ui-tel ui-input" id="telephone">
+            </div>
+          </div>
+        </div>
+
+        <div class="ui-field">
+          <textarea id="textbox" name="textbox" placeholder="Your Message*" class="ui-input" rows="4"></textarea>
+        </div>
+      </div><!--.fields-->
+      
+      <div class="main-job-btns flex">
+        <div class="main-job-btns-col">
+          <div class="ui-uploader">
+            <div class="ui-uploader-accepts">*(doc, docx, pdf, jpg, png)</div>
+            <div class="ui-uploader-files"></div>
+            
+            <label for="myfile" class="ui-uploader-btn ui-btn ui-btn-bordered ui-btn-block">
+              UPLOAD CV*
+              <input type="file" class="ui-uploader-input" accept=".pdf,.doc,.docx,.jpg,.png" id="myfile" name="myfile" multiple>
+            </label>
+          </div>
+        </div>
+
+        <div class="main-job-btns-col">
+          <div class="main-job-btns-submit">
+            <div class="main-job-agree">
+              <div class="ui-checkbox">
+                <input type="checkbox" class="ui-checkbox-input custom-checkbox" id="jagree" name="jagree" value="yes">
+                <label for="jagree" class="ui-checkbox-label">I agree to the <a href="#" class="checkbox-link">Privacy Policy</a> and <a href="#" class="checkbox-link">Terms & Conditions</a></label>
+              </div>
+            </div>
+            
+
+            <button type="submit" class="ui-btn ui-btn-block">SEND</button>
+          </div>
+          
+        </div>
+      </div><!--.btns-->
+
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("form.popup-job-form").validate({
+      rules: {
+        talk_email: {
+          email: true,
+        },
+        talk_telephone: {
+          required: true,
+          telephone: true,
+        },
+      },
+    });
+
+    $(".mfp-popup .ui-tel").intlTelInput();
+
+    //пример обработки формы с предпросмотром файлов
+    $(document).on('submit','form.popup-job-form',function(e){
+      e.preventDefault();
+      //дисаблим кнопку
+      $(this).find('button').attr('disabled',true);
+
+      //Склеиваем данные формы с файлами и отправляем обработчику
+      let form_data = new FormData($(this)[0]);
+      if (Store.files.length) {
+        Store.appendFilesInFormData(form_data);
+        Store.files = [];
+      }
+
+      //аякс или фетч
+      /* $.ajax({
+        url: '',
+        method: 'POST',
+        data: form_data
+        ...
+        success: function() {
+          $(this).find('button').removeAttr('disabled');
+        }
+      }) */
+    });
+  });
+  </script>
+</div>
