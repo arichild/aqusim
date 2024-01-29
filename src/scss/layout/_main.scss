@@ -2,7 +2,7 @@
     position: relative;
     background-color: $colorBack;
     z-index: 1;
-    
+
     &-bg {
         position: absolute;
         right: 0;
@@ -56,6 +56,26 @@
         [class*="col-"] {
             padding-left: 2px;
             padding-right: 2px;
+        }
+    }
+
+    @media(max-width: 1680px) {
+        &-body {
+            padding-top: clamp(210px, 35vh, 350px);
+        }
+
+        &-title {
+            font-size: 64px;
+            padding-bottom: 34px;
+            margin-bottom: 34px;
+
+            &::after {
+                height: 4px;
+            }
+        }
+
+        &-head {
+            margin-bottom: 60px;
         }
     }
 
@@ -171,7 +191,7 @@
     display: block;
     min-height: 100%;
     overflow: hidden;
-    
+
     img {
         display: block;
         position: absolute;
@@ -192,7 +212,7 @@
             bottom: 0;
             left: 48px;
         }
-        
+
     }
 
     @media (max-width: 1023px) {
@@ -276,7 +296,7 @@
     @media (max-width: 1023px) {
         padding: 0;
     }
-        
+
     &-img {
         position: relative;
         padding: 120px 80px 200px;
@@ -317,7 +337,7 @@
                 padding: 0px 5px;
             }
         }
-        
+
     }
     .main-block-title {
         margin-bottom: 50px;
@@ -364,12 +384,12 @@
                 }
 
 
-                &::-webkit-input-placeholder { 
-                    color: $colorRed; 
-                    
+                &::-webkit-input-placeholder {
+                    color: $colorRed;
+
                     @media(max-width:1200px) {
                         font-size: 14px;
-                        
+
                     }
 
                     &:hover {
@@ -378,10 +398,10 @@
                 }
             }
 
-            
+
         }
 
-       
+
 
         &-txt {
             display: inline-block;
@@ -716,13 +736,13 @@
 
         }
     }
-    
+
 }
 
 
 
 
-  
+
 
 
 
@@ -763,7 +783,7 @@
         font-size: rem(40);
         font-weight: 500;
         color: $colorRed;
-        line-height: 1.17;        
+        line-height: 1.17;
     }
 
     @media (max-width: 1366px) {

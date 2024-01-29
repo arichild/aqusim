@@ -915,20 +915,6 @@ a:hover {
   font-size: 1.5rem
 }
 
-@media(max-width: 1440px) {
-   .ui-btn {
-    height: 75px;
-    line-height: 71px;
-   }
-}
-
-/* @media(max-width: 1680px) {
-  .ui-btn {
-    height: 65px;
-    line-height: 54px;
-  }
-} */
-
 .ui-btn:hover {
   border-color: #000;
   background-color: #000;
@@ -956,22 +942,6 @@ a:hover {
   height: 100px;
   line-height: 94px;
   font-size: 30px
-}
-
-@media(max-width: 1680px) {
-  .ui-btn-big {
-    height: 80px;
-    line-height: 74px;
-    font-size: 25px;
-  }
-}
-
-@media(max-width: 1440px) {
-  .ui-btn-big {
-    height: 75px;
-    line-height: 39px;
-    font-size: 25px;
-  }
 }
 
 @media(max-width:1366px) {
@@ -1115,16 +1085,6 @@ a:hover {
 
 .ui-field {
   margin-bottom: 30px
-}
-
-@media(max-width: 1680px) {
-  .ui-field {
-    margin-bottom: 20px;
-  }
-
-  .ui-field .ui-input {
-    font-size: 22px;
-  }
 }
 
 .ui-field-invalid {
@@ -1355,13 +1315,7 @@ textarea.ui-input {
   .ui-select-big .jq-selectbox__select {
     height: 80px;
     line-height: 76px;
-  }
-}
-
-@media(max-width: 1440px) {
-  .ui-select-big .jq-selectbox__select {
-    height: 75px;
-    line-height: 71px;
+    border-bottom-color: #fff
   }
 }
 
@@ -1535,12 +1489,6 @@ textarea.ui-input {
 
 .ui-fz-l {
   font-size: 1.875rem
-}
-
-@media(max-width: 1680px) {
-  .ui-fz-l {
-    font-size: 20px;
-  }
 }
 
 .ui-no-overlow {
@@ -2173,12 +2121,6 @@ screen and (max-height:300px) {
   box-shadow: 0 0 5px -1px rgba(204, 204, 204, .2)
 }
 
-@media(max-width: 1680px) {
-  .mfp-popup {
-    padding: 60px 80px;
-  }
-}
-
 .mfp-popup-title {
   font-size: 70px;
   font-weight: 700;
@@ -2189,13 +2131,6 @@ screen and (max-height:300px) {
   position: relative;
   padding-right: 45px;
   line-height: 1.17
-}
-
-@media(max-width: 1680px) {
-   .mfp-popup-title {
-      font-size: 60px;
-      margin-bottom: 34px;
-   }
 }
 
 .mfp-popup-title:before {
@@ -2328,13 +2263,6 @@ button.mfp-close {
   opacity: 1
 }
 
-@media(max-width: 1680px) {
-  button.mfp-close {
-    top: 82px !important;
-    right: 80px;
-  }
-}
-
 button.mfp-close:after,
 button.mfp-close:before {
   content: "";
@@ -2447,13 +2375,6 @@ header.header {
   position: relative;
   padding-top: 75px;
   padding-bottom: 75px
-}
-
-@media(max-width: 1680px) {
-  header.header {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
 }
 
 @media(max-width:1366px) {
@@ -3200,18 +3121,6 @@ header.header-main {
   margin-bottom: 80px
 }
 
-@media(max-width: 1680px) {
-  .main-screen-head {
-    margin-bottom: 60px
-  }
-}
-
-@media(max-width: 1440px) {
-  .main-screen-head {
-    margin-bottom: 55px
-  }
-}
-
 .main-screen-title {
   font-weight: 700;
   font-size: 85px;
@@ -3232,14 +3141,6 @@ header.header-main {
   max-width: 80%;
   height: 6px;
   background-color: #ee2742
-}
-
-@media(max-width: 1680px) {
-  .main-screen-title {
-   font-size: 64px;
-   padding-bottom: 34px;
-   margin-bottom: 34px;
-  }
 }
 
 .main-screen-txt {
@@ -3263,12 +3164,6 @@ header.header-main {
 }
 .main-screen-form .ui-input:focus {
   border-bottom-color: #f79da9;
-}
-
-@media(max-width: 1680px) {
-  .main-screen-body {
-    padding-top: clamp(210px, 35vh, 350px);
-  }
 }
 
 @media(max-width:1366px) {
@@ -3453,15 +3348,16 @@ header.header-main {
   font-family: Raleway, sans-serif
 }
 
+@media(max-width: 1680px) {
+  .main-block-title {
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+}
+
 .main-block-title-dash {
   padding-bottom: 20px;
   position: relative
-}
-
-@media(max-width: 1680px) {
-  .main-block-title-dash {
-    padding-bottom: 15px;
-  }
 }
 
 .main-block-title-dash:before {
@@ -3475,6 +3371,12 @@ header.header-main {
   background-color: #ee2742
 }
 
+@media(max-width:1680px) {
+  .main-block-title {
+    font-size: 55px;
+    margin-bottom: 65px;
+  }
+}
 @media(max-width:1366px) {
   .main-col {
     padding-left: 40px;
@@ -3490,38 +3392,6 @@ header.header-main {
 
 .main-about {
   padding-top: 90px;
-}
-@media(max-width: 1680px) {
-  .main-about-overflow {
-    height: calc(100vh - 58px - 90px - 40px - 80px - 40px - 40px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 25px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .main-about-overflow::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  .main-about-overflow::-webkit-scrollbar-track {
-    background: #f2f2f2;
-  }
-
-  .main-about-overflow::-webkit-scrollbar-thumb {
-    background: #f14d63;
-  }
-
-  .main-about-overflow p {
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .main-block-title {
-    margin-bottom: 40px;
-    font-size: 50px;
-  }
 }
 @media (max-width: 1023px) {
   .main-about {
@@ -3569,22 +3439,6 @@ header.header-main {
 
 .main-block-txt {
   margin-bottom: 80px
-}
-
-@media(max-width: 1680px) {
-  .main-block-txt {
-    margin-bottom: 40px;
-  }
-
-  .main-block-txt p {
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .main-block-txt li {
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
 }
 
 @media(max-width:1023px) {
@@ -3858,12 +3712,6 @@ header.header-main {
   text-align: center
 }
 
-@media(max-width: 1680px) {
-  .main-touch-red {
-    padding-top: 100px;
-  }
-}
-
 .main-touch-red-inner {
   display: inline-block;
   text-align: left
@@ -3890,20 +3738,8 @@ header.header-main {
   margin-bottom: 50px
 }
 
-@media(max-width: 1680px) {
-  .main-touch-form-head {
-    margin-bottom: 40px;
-  }
-}
-
 .main-touch-form .main-block-title {
   margin-bottom: 20px
-}
-
-@media(max-width: 1680px) {
-   .main-touch-form .main-block-title {
-    margin-bottom: 15px;
-   }
 }
 
 .main-touch-form-txt {
@@ -4012,12 +3848,6 @@ header.header-main {
   -webkit-transition: background-color .3s, color .3s, border-color .3s, box-shadow .3s, -webkit-box-shadow .3s;
   -o-transition: background-color .3s, color .3s, border-color .3s, box-shadow .3s, -webkit-box-shadow .3s;
   transition: background-color .3s, color .3s, border-color .3s, box-shadow .3s, -webkit-box-shadow .3s
-}
-
-@media(max-width: 1680px) {
-  .main-touch-link {
-    margin-bottom: 20px;
-  }
 }
 
 @media(max-width:1366px) {
@@ -4213,10 +4043,6 @@ header.header-main {
           align-items: center;
   margin-left: -15px;
   margin-right: -15px;
-}
-.logos-block:empty {
-  display: none !important;
-  margin-bottom: 0;
 }
 .logos-block-col {
   padding-left: 15px;

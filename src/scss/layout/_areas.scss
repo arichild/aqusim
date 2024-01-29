@@ -15,8 +15,8 @@
     @media(max-width:1023px) {
         display: none;
     }
-    
-    
+
+
     &-head {
         display: flex;
         justify-content: space-between;
@@ -189,7 +189,7 @@
         text-transform: uppercase;
         font-family: $fontRal;
         cursor: pointer;
-        
+
 
         @media(max-width:1023px) {
             display: flex;
@@ -211,7 +211,7 @@
     }
     @media (max-width: 1023px) {
         border-top: 0;
-    }   
+    }
     @media (max-width: 599px) {
         margin-bottom: 46px;
     }
@@ -242,7 +242,7 @@
         @media(max-width: 1366px) {
             flex: 0 0 45%;
             max-width: 45%;
-        } 
+        }
 
         @media(max-width: 599px) {
             max-width: 100%;
@@ -352,18 +352,18 @@
             }
         }
 
-        
+
 
         &-container {
             margin-bottom: 160px;
 
             @media(max-width:1366px) {
                 margin-bottom: 50px;
-            } 
+            }
 
             @media(max-width:1023px) {
                 margin-bottom: 45px;
-            } 
+            }
             .vacancy-info-item:first-child {
                 border-top: 2px solid $colorGray;
 
@@ -383,7 +383,7 @@
                 margin-top: 25px;
             }
 
-    
+
             @media(max-width:1023px){
                 display: block;
             }
@@ -403,7 +403,7 @@
         }
     }
 
-    
+
 
 }
 
@@ -420,8 +420,8 @@
         background-color: $colorBack;
         text-align: center;
 
-       
-        
+
+
         &-title {
             color: $colorDark;
         }
@@ -444,7 +444,7 @@
         }
 
         .jq-selectbox__dropdown {
-           text-align: left;            
+           text-align: left;
         }
     }
 

@@ -172,7 +172,7 @@ a {
     &-link {
         margin-bottom: 10px;
         color: #000;
-        
+
         &::after {
             position: relative;
             display: inline-block;
@@ -294,7 +294,7 @@ textarea.ui-input {
     color: $colorDark;
 
     .jq-selectbox {
-        
+
         &__select {
             background: #FFF;
             height: 60px;
@@ -428,7 +428,7 @@ textarea.ui-input {
             font-size: 16px;
 
             .jq-selectbox {
-                
+
                 &__select {
                     height: 56px;
                     line-height: 52px;
@@ -457,7 +457,7 @@ textarea.ui-input {
         &-big {
             .jq-selectbox {
                 font-size: 20px;
-    
+
                 &__select {
                     height: 62px;
                     line-height: 58px;
@@ -544,6 +544,10 @@ textarea.ui-input {
     font-size: rem(30);
     // line-height: 1.25;
 
+    @media(max-width: 1680px) {
+       font-size: 25px;
+    }
+
     @media (max-width: 1366px) {
         font-size: rem(21);
         // line-height: 1.19;
@@ -619,7 +623,7 @@ textarea.ui-input {
         padding-left: 40px;
         padding-right: 40px;
         margin-bottom: 16px;
-        
+
 
         &-name {
             display: block;
