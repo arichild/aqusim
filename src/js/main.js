@@ -48,10 +48,10 @@ $(document).on('click', '.vacancy-filters-reset', function(e) {
     headerStartFix = scrollTrigger()
   })
 
-  window.addEventListener('scroll', function() { 
-    if (window.scrollY > headerStartFix) { 
-      header.classList.add("header-fixing") 
-    }  else { 
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > headerStartFix) {
+      header.classList.add("header-fixing")
+    }  else {
       header.classList.remove("header-fixing")
     }
   })
@@ -66,7 +66,7 @@ jQuery.validator.setDefaults({
   errorClass: 'ui-field-invalid',
 	successClass: 'ui-field-valid',
 	focusInvalid: false,
-	errorElement: 'div',
+	errorElement: 'span',
   errorPlacement: function (error, element) {
     if ( element.hasClass('ui-tel') ) {
       element.closest('.iti').after(error);
@@ -152,7 +152,7 @@ $(document).ready(function () {
     let hiddenInput = $(this).attr('name');
     $("input[name="+hiddenInput+"-country-code]").val($(this).val());
   });
-  
+
   $(".ui-tel").on("countrychange", function() {
     let hiddenInput = $(this).attr("name");
     $("input[name="+hiddenInput+"-country-code]").val(this.value);
@@ -178,7 +178,7 @@ $(document).ready(function () {
 
           document.documentElement.style.overflow = 'hidden'
         },
-  
+
         close: function() {
           document.documentElement.style.overflow = ''
         }
@@ -193,7 +193,7 @@ function openInlinePopup(popupID) {
   $.magnificPopup.close();
   setTimeout(()=>{
     $.magnificPopup.open({
-      items: { 
+      items: {
         src: popupID,
         type: 'inline'
       },
@@ -214,7 +214,7 @@ function showPopup(url = 'popups/popup-thanks.html') {
   $.magnificPopup.close();
   setTimeout(()=>{
     $.magnificPopup.open({
-      items: { 
+      items: {
         src: url,
         type: "ajax"
       },
@@ -280,7 +280,7 @@ $(document).on('click','.ui-uploader-file-delete',function(e){
 
 
 
-let itrObserver = new IntersectionObserver((entries, observer) => { 
+let itrObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       const id = entry.target.getAttribute('id') || null
@@ -293,15 +293,7 @@ let itrObserver = new IntersectionObserver((entries, observer) => {
 }, {threshold: 0.5});
 
 window.onload = () => {
-  document.querySelectorAll('.main-block, .main-screen').forEach(el => { 
-    itrObserver.observe(el) 
+  document.querySelectorAll('.main-block, .main-screen').forEach(el => {
+    itrObserver.observe(el)
   })
 }
-
-
-
- 
-
-  
-
-  

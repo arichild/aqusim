@@ -36,13 +36,13 @@
           <textarea id="textbox" name="textbox" placeholder="Your Message*" class="ui-input" rows="4"></textarea>
         </div>
       </div><!--.fields-->
-      
+
       <div class="main-job-btns flex">
         <div class="main-job-btns-col">
           <div class="ui-uploader">
             <div class="ui-uploader-accepts">*(doc, docx, pdf, jpg, png)</div>
             <div class="ui-uploader-files"></div>
-            
+
             <label for="myfile" class="ui-uploader-btn ui-btn ui-btn-bordered ui-btn-block">
               UPLOAD CV*
               <input type="file" class="ui-uploader-input" accept=".pdf,.doc,.docx,.jpg,.png" id="myfile" name="myfile" multiple>
@@ -52,20 +52,23 @@
 
         <div class="main-job-btns-col">
           <div class="main-job-btns-submit">
-            <div class="main-job-agree">
-              <div class="ui-checkbox">
-                <input type="checkbox" class="ui-checkbox-input custom-checkbox" id="jagree" name="jagree" value="yes">
-                <label for="jagree" class="ui-checkbox-label">I agree to the <a href="#" class="checkbox-link">Privacy Policy</a> and <a href="#" class="checkbox-link">Terms & Conditions</a></label>
-              </div>
-            </div>
-            
-
             <button type="submit" class="ui-btn ui-btn-block">SEND</button>
           </div>
-          
+
         </div>
       </div><!--.btns-->
 
+
+                <div class="main-touch-form-agree">
+                  <div class="ui-checkbox">
+<input type="checkbox" class="ui-checkbox-input custom-checkbox" id="form2" name="form2" value="yes" checked="" data-gtm-form-interact-field-id="0">
+                   <label for="form2" class="ui-checkbox-label">We respect your data. By checking this box you confirm that you have read and agree to our  <a href="#" class="checkbox-link">Terms & Conditions</a>, and that you have read our <a href="/terms" class="checkbox-link">Privacy Policy</a></label>
+                  </div>
+                  <div class="ui-checkbox">
+<input type="checkbox" class="ui-checkbox-input custom-checkbox" id="form-3" name="form-3" value="yes" checked="" data-gtm-form-interact-field-id="0">
+                   <label for="form-3" class="ui-checkbox-label">By checking this box you would like to receive more information about our products/services, events, news and offers</label>
+                  </div>
+                </div>
     </form>
   </div>
 
@@ -80,7 +83,19 @@
           required: true,
           telephone: true,
         },
+        form2: {
+        required: true
+      }
       },
+
+      errorPlacement: function (error, element) {
+      if (element.hasClass('ui-input')) {
+        element.closest('.ui-field').append(error);
+      }
+      if (element.hasClass('ui-checkbox-input')) {
+        element.closest('.ui-checkbox').append(error);
+      }
+    },
     });
 
     $(".mfp-popup .ui-tel").intlTelInput();
@@ -109,6 +124,11 @@
         }
       }) */
     });
+
+    if ($(window).width() <= 599) {
+        console.log('asdasd')
+        $('.main-job-btns-submit').insertAfter('.main-touch-form-agree');
+      }
   });
   </script>
 </div>

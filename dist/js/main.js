@@ -48,10 +48,10 @@ $(document).on('click', '.vacancy-filters-reset', function(e) {
     headerStartFix = scrollTrigger()
   })
 
-  window.addEventListener('scroll', function() { 
-    if (window.scrollY > headerStartFix) { 
-      header.classList.add("header-fixing") 
-    }  else { 
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > headerStartFix) {
+      header.classList.add("header-fixing")
+    }  else {
       header.classList.remove("header-fixing")
     }
   })
@@ -66,14 +66,19 @@ jQuery.validator.setDefaults({
   errorClass: 'ui-field-invalid',
 	successClass: 'ui-field-valid',
 	focusInvalid: false,
-	errorElement: 'div',
+	errorElement: 'span',
   errorPlacement: function (error, element) {
     if ( element.hasClass('ui-tel') ) {
       element.closest('.iti').after(error);
     } else {
       error.insertAfter(element);
     }
-  }
+  },
+  invalidHandler: function() {
+		setTimeout(function() {
+			$('select.ui-select').trigger('refresh');
+		}, 300)
+	}
 });
 jQuery.validator.addMethod("telephone", function(value, element) {
   return this.optional(element) || /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value);
@@ -101,6 +106,18 @@ $(document).ready(function () {
         required: true,
         telephone: true,
       },
+      form2: {
+        required: true
+      }
+    },
+
+    errorPlacement: function (error, element) {
+      if (element.hasClass('ui-input')) {
+        element.closest('.ui-field').append(error);
+      }
+      if (element.hasClass('ui-checkbox-input')) {
+        element.closest('.ui-checkbox').append(error);
+      }
     },
   });
 
@@ -136,8 +153,20 @@ $(document).ready(function () {
       },
       ttelephone: {
         telephone: true,
+      },
+      form2: {
+        required: true
       }
-    }
+    },
+
+    errorPlacement: function (error, element) {
+      if (element.hasClass('ui-input')) {
+        element.closest('.ui-field').append(error);
+      }
+      if (element.hasClass('ui-checkbox-input')) {
+        element.closest('.ui-checkbox').append(error);
+      }
+    },
   })
 
   $(".ui-tel").intlTelInput({
@@ -152,7 +181,7 @@ $(document).ready(function () {
     let hiddenInput = $(this).attr('name');
     $("input[name="+hiddenInput+"-country-code]").val($(this).val());
   });
-  
+
   $(".ui-tel").on("countrychange", function() {
     let hiddenInput = $(this).attr("name");
     $("input[name="+hiddenInput+"-country-code]").val(this.value);
@@ -178,7 +207,7 @@ $(document).ready(function () {
 
           document.documentElement.style.overflow = 'hidden'
         },
-  
+
         close: function() {
           document.documentElement.style.overflow = ''
         }
@@ -193,7 +222,7 @@ function openInlinePopup(popupID) {
   $.magnificPopup.close();
   setTimeout(()=>{
     $.magnificPopup.open({
-      items: { 
+      items: {
         src: popupID,
         type: 'inline'
       },
@@ -214,7 +243,7 @@ function showPopup(url = 'popups/popup-thanks.html') {
   $.magnificPopup.close();
   setTimeout(()=>{
     $.magnificPopup.open({
-      items: { 
+      items: {
         src: url,
         type: "ajax"
       },
@@ -280,7 +309,7 @@ $(document).on('click','.ui-uploader-file-delete',function(e){
 
 
 
-let itrObserver = new IntersectionObserver((entries, observer) => { 
+let itrObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       const id = entry.target.getAttribute('id') || null
@@ -293,15 +322,63 @@ let itrObserver = new IntersectionObserver((entries, observer) => {
 }, {threshold: 0.5});
 
 window.onload = () => {
-  document.querySelectorAll('.main-block, .main-screen').forEach(el => { 
-    itrObserver.observe(el) 
+  document.querySelectorAll('.main-block, .main-screen').forEach(el => {
+    itrObserver.observe(el)
   })
 }
 
+const userAgent = navigator.userAgent.toLowerCase();
+const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
 
+if (isTablet && (screen.width == 1024 && screen.height == 1366)) {
+  const allBtn = document.querySelectorAll('.ui-btn')
+  const alSelect = document.querySelectorAll('.ui-select')
 
- 
+  allBtn.forEach(element => {
+    element.classList.add('btn-tablet')
+  });
 
-  
+  alSelect.forEach(element => {
+    element.classList.add('select-tablet')
+  });
+}
 
-  
+jQuery('#datetimepicker').datetimepicker({
+  timepicker:false,
+  format: "d.m.Y",
+});
+
+$('select.ui-select').on('change', function() {
+  setTimeout(function() {
+    $('select.ui-select').trigger('refresh');
+  }, 1)
+});
+
+var dt = new DataTransfer();
+
+$('.input-file input[type=file]').on('change', function(){
+	let $files_list = $(this).closest('.input-file').next();
+	$files_list.empty();
+
+	for(var i = 0; i < this.files.length; i++){
+		let new_file_input = '<div class="input-file-list-item">' +
+			'<span class="input-file-list-name">' + this.files.item(i).name + '</span>' +
+			'<a href="#" onclick="removeFilesItem(this); return false;" class="input-file-list-remove">x</a>' +
+			'</div>';
+		$files_list.append(new_file_input);
+		dt.items.add(this.files.item(i));
+	};
+	this.files = dt.files;
+});
+
+function removeFilesItem(target){
+	let name = $(target).prev().text();
+	let input = $(target).closest('.input-file-row').find('input[type=file]');
+	$(target).closest('.input-file-list-item').remove();
+	for(let i = 0; i < dt.items.length; i++){
+		if(name === dt.items[i].getAsFile().name){
+			dt.items.remove(i);
+		}
+	}
+	input[0].files = dt.files;
+}

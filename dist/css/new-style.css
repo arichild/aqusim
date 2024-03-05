@@ -22,7 +22,7 @@
   transform: translateY(-50%)
 }
 
-@media(max-width: 1680px) {
+@media(max-width: 1920px) {
   .main-screen.industry .main-screen-head {
       width:55%
   }
@@ -83,7 +83,7 @@
   margin-bottom: -70px
 }
 
-@media(max-width: 1680px) {
+@media(max-width: 1920px) {
   .main-approach-btns a:first-child {
     padding: 0;
     max-width: 34%;
@@ -111,7 +111,7 @@
   margin-right: 80px
 }
 
-@media(max-width: 1680px) {
+@media(max-width: 1920px) {
   .main-approach-btns a:first-child {
       margin-right:40px
   }
@@ -228,6 +228,12 @@
   margin-right: 80px
 }
 
+@media(max-width: 1920px) {
+  .main-job-btns-group a:first-child {
+    margin-right: 60px;
+  }
+}
+
 @media(max-width: 1366px) {
   .main-job-btns-group a:first-child {
       margin-right:40px
@@ -292,9 +298,22 @@
   padding-bottom: 165px
 }
 
+@media(max-width: 1920px) {
+  .main-col-job-color {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+
 .main-col-job-color h2.main-block-title {
   color: #fff;
   margin-bottom: 80px
+}
+
+@media(max-width: 1920px) {
+  .main-col-job-color h2.main-block-title {
+    margin-bottom: 40px;
+  }
 }
 
 .main-col-job-color p {
@@ -302,9 +321,10 @@
   margin-bottom: 80px
 }
 
-@media(max-width: 1680px) {
+@media(max-width: 1920px) {
   .main-col-job-color p {
     font-size: 20px;
+    margin-bottom: 40px;
   }
 }
 
@@ -403,6 +423,12 @@
   display: block;
   margin-bottom: 24px;
   width: 100%;
+}
+
+@media(max-width: 1920px) {
+  .main-expertise-list li {
+    margin-bottom: 15px;
+  }
 }
 
 .main-expertise-link:before {
